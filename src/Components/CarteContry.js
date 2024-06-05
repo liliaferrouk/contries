@@ -1,15 +1,15 @@
 import React from 'react'
 import './CarteContry.css'
 
-function CarteContry() {
+function CarteContry({name,population,region,capital,flag}) {
   return (
     <div className='carte-contry'>
-        <img src="https://flagcdn.com/de.svg" alt="img" />
+        <img src={flag} alt="img" />
         <div className="info">
-            <h1>Germany</h1>
-            <p><span>Population:</span> 81,770,900</p>
-            <p><span>Region:</span> Europe</p>
-            <p><span>Capital:</span> Berlin</p>
+            <h1>{name}</h1>
+            <p><span>Population:</span> {population}</p>
+            <p><span>Region:</span> {region}</p>
+            <p><span>Capital:</span> {capital}</p>
         </div>
     </div>
   )

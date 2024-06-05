@@ -13,7 +13,7 @@ const countriesList = [
     "Bruxel"
   ];
 
-function AllContries({darkMode}) {
+function AllContries({darkMode,usedData}) {
     const [searchQuery, setSearchQuery] = useState('');
     const [filter, setFilter] = useState('');
     const [filteredCountries, setFilteredCountries] = useState(countriesList);
@@ -43,8 +43,14 @@ function AllContries({darkMode}) {
         </div>
 
         <div className="countries-list">
-            {filteredCountries.map(country => (
-                <CarteContry/>
+            {usedData.map(country => (
+                <CarteContry
+                    name={country.name}
+                    population={country.population}
+                    region={country.region}
+                    capital={country.capital}
+                    flag={country.flag}
+                />
             ))}
         </div>
     </div>
