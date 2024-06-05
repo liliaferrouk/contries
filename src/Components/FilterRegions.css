@@ -2,7 +2,7 @@
     position: relative;
 }
 
-.selectionne{
+.filter-region .selectionne{
     background-color: white;
     display: flex;
     justify-content: space-between;
@@ -16,7 +16,11 @@
     cursor: pointer;
 }
 
-.selectionne > img{
+.filter-region.dark .selectionne{
+    background-color: var(--clr-dark-blue);
+}
+
+.filter-region .selectionne > img{
     width: 10px;
 }
 
@@ -33,7 +37,15 @@
     line-height: 1.4rem;
 }
 
+.filter-region.dark .list{
+    background-color: var(--clr-dark-blue);
+}
+
 .filter-region .list p:hover{
     background-color: var(--clr-light-gray);
     cursor: pointer;
+}
+
+.filter-region.dark .list p:hover{
+    background-color: var(--clr-vary-dark-blue);
 }

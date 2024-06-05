@@ -18,6 +18,19 @@
     border-radius: 5px;
 }
 
+.search-input-wrapper.dark{
+    background-color: var(--clr-dark-blue);
+}
+
+.search-input-wrapper.dark .search-input{
+    background-color: var(--clr-dark-blue);
+    color: var(--clr-light-gray);
+}
+
+.search-input-wrapper.dark .search-input::placeholder{
+    color: var(--clr-light-gray);
+}
+
 .search-input-wrapper img{
     width: 20px;
     margin-right: .5rem;
@@ -35,7 +48,10 @@
     color: var(--clr-dark-gray);
 }
 
-.countries-list div {
-    padding: 0.5rem;
-    border-bottom: 1px solid #ccc;
+.countries-list{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    align-items: center;
 }

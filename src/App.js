@@ -17,7 +17,7 @@ function App() {
           ?
           <OneContrie/>
           :
-          <AllContries/>
+          <AllContries darkMode={darkMode}/>
         }
       </main>
     </div>

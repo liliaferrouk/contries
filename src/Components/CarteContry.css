@@ -1,0 +1,31 @@
+.carte-contry{
+    width:250px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.carte-contry img{
+    border-radius: 5px 5px 0px 0px;
+    width:100%;
+}
+
+.carte-contry .info{
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.carte-contry h1{
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: .8rem;
+}
+
+.carte-contry p{
+    font-size: .8rem;
+    line-height: 1.3rem;
+}
+
+.carte-contry span{
+    font-weight: 650;
+}
