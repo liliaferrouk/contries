@@ -4,27 +4,19 @@ import search_icon from '../images/search.svg'
 import FilterRegions from './FilterRegions';
 import CarteContry from './CarteContry';
 
-const countriesList = [
-    "Afghanistan",
-    "Albania",
-    "Algeria",
-    "Andorra",
-    "Angola",
-    "Bruxel"
-  ];
 
-function AllContries({darkMode,usedData}) {
+function AllContries({darkMode,usedData,setSelectedContrie}) {
     const [searchQuery, setSearchQuery] = useState('');
     const [filter, setFilter] = useState('');
-    const [filteredCountries, setFilteredCountries] = useState(countriesList);
+    const [filteredCountries, setFilteredCountries] = useState(usedData);
 
     useEffect(() => {
-        const result = countriesList.filter(country => 
-        country.toLowerCase().includes(searchQuery.toLowerCase()) && 
-        (filter === '' || country.startsWith(filter))
+        const result = usedData.filter(country =>
+        country.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
+        (filter === '' || country.region === filter)
         );
         setFilteredCountries(result);
-    }, [searchQuery, filter]);
+    }, [searchQuery, filter,usedData]);
 
   return (
     <div>
@@ -43,13 +35,16 @@ function AllContries({darkMode,usedData}) {
         </div>
 
         <div className="countries-list">
-            {usedData.map(country => (
+            {filteredCountries.map(country => (
                 <CarteContry
+                    key={country.name}
                     name={country.name}
                     population={country.population}
                     region={country.region}
                     capital={country.capital}
                     flag={country.flag}
+                    darkMode={darkMode}
+                    setSelectedContrie={setSelectedContrie}
                 />
             ))}
         </div>

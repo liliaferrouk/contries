@@ -9,7 +9,7 @@ import data from './data.json'
 function App() {
   const [darkMode,setDarkMode]=useState(false)
   const [selectedContrie,setSelectedContrie] = useState(null)
-  const usedData = data.slice(0,8).map(contry=>({
+  const usedData = data.map(contry=>({
     name: contry.name,
     population: contry.population,
     region: contry.region,
@@ -23,6 +23,11 @@ function App() {
     alphaCode: contry.alpha3Code,
     flag: contry.flags.svg
   }))
+
+  function getContryByName(name) {
+    console.log(name)
+    return usedData.find(d => d.name === name);
+  }
   return (
     <div className="App">
       <Header darkMode={darkMode} setDarkMode={setDarkMode}/>
@@ -30,9 +35,9 @@ function App() {
         {
           selectedContrie
           ?
-          <OneContrie/>
+          <OneContrie contry={getContryByName(selectedContrie)} />
           :
-          <AllContries darkMode={darkMode} usedData={usedData} />
+          <AllContries darkMode={darkMode} usedData={usedData} setSelectedContrie={setSelectedContrie}/>
         }
       </main>
     </div>
