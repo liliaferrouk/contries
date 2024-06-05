@@ -4,7 +4,7 @@ import arrow from '../images/arrow-down.svg'
 import arrow_blanc from '../images/arrow-down-blanc.svg'
 
 function FilterRegions({filter,setFilter,darkMode}) {
-    const regions = ["Africa","America","Asia","Europe","Oceania","All"]
+    const regions = ["Africa","Americas","Asia","Europe","Oceania","All"]
     const [clicked,setCliqued] = useState(false)
 
     function hundleClick(regionname){

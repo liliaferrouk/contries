@@ -8,15 +8,46 @@ import CarteContry from './CarteContry';
 function AllContries({darkMode,usedData,setSelectedContrie}) {
     const [searchQuery, setSearchQuery] = useState('');
     const [filter, setFilter] = useState('');
-    const [filteredCountries, setFilteredCountries] = useState(usedData);
+    const [filteredCountries, setFilteredCountries] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [loading, setLoading] = useState(false);
+    const countriesPerPage = 10;
+
+    const fetchCountries = async (page) => {
+        setLoading(true);
+        const startIndex = (page - 1) * countriesPerPage;
+        const endIndex = startIndex + countriesPerPage;
+        const result = await new Promise((resolve) => {
+            setTimeout(() => {
+                const dataSlice = usedData
+                    .filter(country =>
+                        country.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
+                        (filter === '' || country.region === filter)
+                    )
+                    .slice(startIndex, endIndex);
+                resolve(dataSlice);
+            }, 500); // Simulate delay for demonstration purposes (you can remove this in your actual code)
+        });
+        setFilteredCountries(prevCountries => [...prevCountries, ...result]);
+        setLoading(false);
+    };
 
     useEffect(() => {
-        const result = usedData.filter(country =>
-        country.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-        (filter === '' || country.region === filter)
-        );
-        setFilteredCountries(result);
-    }, [searchQuery, filter,usedData]);
+        fetchCountries(currentPage);
+    }, [currentPage, searchQuery, filter]);
+
+    const handleScroll = () => {
+        const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
+        console.log("Scroll detected. ScrollTop:", scrollTop, "ClientHeight:", clientHeight, "ScrollHeight:", scrollHeight);
+        if (scrollTop + clientHeight > scrollHeight -50 && !loading) {
+            setCurrentPage(prevPage => prevPage + 1);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
   return (
     <div>
@@ -47,6 +78,7 @@ function AllContries({darkMode,usedData,setSelectedContrie}) {
                     setSelectedContrie={setSelectedContrie}
                 />
             ))}
+            {loading && <p>Loading...</p>}
         </div>
     </div>
   )
