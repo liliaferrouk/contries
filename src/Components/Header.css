@@ -1,0 +1,38 @@
+header{
+    width: 100%;
+    height: 4.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .9rem;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    position: fixed;
+}
+
+header.dark{
+    background-color: var(--clr-dark-blue);
+    color: var(--clr-light-gray);
+}
+
+header > p{
+    font-size: .85rem;
+    font-weight: 800;
+}
+
+.switch-mode{
+    display: flex;
+    align-items: start;
+    cursor: pointer;
+}
+
+.switch-mode > img{
+    width: 14px;
+}
+
+.switch-mode > span{
+    font-size: .7rem;
+    font-weight: 650;
+    margin-left: 8px;
+}
