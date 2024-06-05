@@ -1,0 +1,41 @@
+.search-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+    margin-bottom: 1rem;
+}
+
+
+.search-input-wrapper{
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    font-size: 1rem;
+    height: 3rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.search-input-wrapper img{
+    width: 20px;
+    margin-right: .5rem;
+}
+
+.search-filter input{
+    height: 100%;
+    width: 90%;
+    border: none;
+    font-size: .7rem;
+    outline: none;
+}
+
+.search-filter input::placeholder {
+    color: var(--clr-dark-gray);
+}
+
+.countries-list div {
+    padding: 0.5rem;
+    border-bottom: 1px solid #ccc;
+}
