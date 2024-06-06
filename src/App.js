@@ -7,8 +7,8 @@ import data from './data.json'
 
 
 function App() {
-  const [darkMode,setDarkMode]=useState(false)
-  const [selectedContrie,setSelectedContrie] = useState(null)
+  const [darkMode,setDarkMode]=useState(false)//false
+  const [selectedContrie,setSelectedContrie] = useState("Belgium")//null
   const usedData = data.map(contry=>({
     name: contry.name,
     population: contry.population,
@@ -35,7 +35,7 @@ function App() {
         {
           selectedContrie
           ?
-          <OneContrie contry={getContryByName(selectedContrie)} />
+          <OneContrie contry={getContryByName(selectedContrie)} darkMode={darkMode} setSelectedContrie={setSelectedContrie}/>
           :
           <AllContries darkMode={darkMode} usedData={usedData} setSelectedContrie={setSelectedContrie}/>
         }
