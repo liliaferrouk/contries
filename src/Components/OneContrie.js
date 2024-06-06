@@ -66,7 +66,7 @@ function OneContrie({ contry,darkMode,setSelectedContrie,usedData}) {
             <h2>Border Countries: </h2>
             <div className='border-contries-list'>
               {getBorderContries().map(country => (
-                <div>{country}</div>
+                <div key={country} onClick={()=>{setSelectedContrie(country)}}>{country}</div>
               ))}
             </div>
           </div>
