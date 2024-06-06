@@ -3,13 +3,43 @@ import arrow_b from '../images/arrow-back-white.svg'
 import arrow_n from '../images/arrow-back-black.svg'
 import './OneContrie.css'
 
-function OneContrie({ contry,darkMode,setSelectedContrie }) {
+function OneContrie({ contry,darkMode,setSelectedContrie,usedData}) {
+
   const formatNumber = (number) => {
     return new Intl.NumberFormat().format(number);
   };
-  const { name, population, region, capital, nativeName, subRegion, topLevelDomain, currencies, languages, borders, alphaCode, flag } = contry;
+
+  const { name, population, region, capital, nativeName, subRegion, topLevelDomain, currencies, languages, borders,flag } = contry;
+
+  function getCurrency(){
+    let str = ""
+    for (let i = 0; i < currencies.length; i++) {
+      if(i>0) str += ", "
+      str += currencies[i].name;
+    }
+    return str;
+  }
+
+  function getLanguages(){
+    let str = ""
+    for (let i = 0; i < languages.length; i++) {
+      if(i>0) str += ", "
+      str += languages[i].name;
+    }
+    return str;
+  }
+
+  function getBorderContries() {
+    let result = []
+    for (let i = 0; i < borders.length; i++) {
+      let ContryBorder = usedData.find(d => d.alphaCode === borders[i])
+      result.push(ContryBorder.name);
+    }
+    return result
+  }
+
   return (
-    <div className='one-Contry-div'>
+    <div className={`one-Contry-div ${darkMode?'dark':''}`}>
       <div className="btn-back" onClick={()=>{setSelectedContrie(null)}}>
         <img src={darkMode?arrow_b:arrow_n} alt="back icon" />
         <p>Back</p>
@@ -28,17 +58,16 @@ function OneContrie({ contry,darkMode,setSelectedContrie }) {
             <div className="info2">
               <p><span>Top Level Domain: </span>{topLevelDomain}</p>
               {/* to do:  */}
-              <p><span>Currencies: </span>Euro</p>
-              <p><span>Languages: </span>Dutch,French,German</p>
+              <p><span>Currencies: </span>{getCurrency()}</p>
+              <p><span>Languages: </span>{getLanguages()}</p>
             </div>
           </div>
           <div className="border-div">
             <h2>Border Countries: </h2>
             <div className='border-contries-list'>
-              <div>France</div>
-              <div>Germany</div>
-              <div>Netherlands</div>
-              <div>Netherlands</div>
+              {getBorderContries().map(country => (
+                <div>{country}</div>
+              ))}
             </div>
           </div>
       </div>

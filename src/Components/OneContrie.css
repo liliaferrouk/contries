@@ -9,7 +9,7 @@
     margin-bottom: 1.2rem;
 }
 
-.one-Contry-div p{
+.info-contry p{
     font-size: .85rem;
     margin-bottom: .6rem;
 }
@@ -33,6 +33,10 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 3px;
     cursor: pointer;
+}
+
+.one-Contry-div.dark .btn-back{
+    background-color: var(--clr-dark-blue);
 }
 
 .btn-back img{
@@ -75,12 +79,17 @@ font-size: .8rem;
 
 .border-contries-list > div{
     font-size: .7rem;
-    width: 90px;
+    min-width: 90px;
     height: 1.5rem;
+    padding-inline: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 3px;
+}
+
+.one-Contry-div.dark .border-contries-list > div{
+    background-color: var(--clr-dark-blue);
 }

@@ -25,7 +25,6 @@ function App() {
   }))
 
   function getContryByName(name) {
-    console.log(name)
     return usedData.find(d => d.name === name);
   }
   return (
@@ -35,7 +34,7 @@ function App() {
         {
           selectedContrie
           ?
-          <OneContrie contry={getContryByName(selectedContrie)} darkMode={darkMode} setSelectedContrie={setSelectedContrie}/>
+          <OneContrie contry={getContryByName(selectedContrie)} darkMode={darkMode} setSelectedContrie={setSelectedContrie} usedData={usedData}/>
           :
           <AllContries darkMode={darkMode} usedData={usedData} setSelectedContrie={setSelectedContrie}/>
         }

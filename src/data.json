@@ -226,6 +226,12 @@
         "iso639_2": "ara",
         "name": "Arabic",
         "nativeName": "العربية"
+      },
+      {
+        "iso639_1": "ka",
+        "iso639_2": "kab",
+        "name": "Kabyle",
+        "nativeName": "taqbaylit"
       }
     ],
     "translations": {
