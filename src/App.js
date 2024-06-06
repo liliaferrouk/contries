@@ -7,8 +7,12 @@ import data from './data.json'
 
 
 function App() {
-  const [darkMode,setDarkMode]=useState(false)//false
-  const [selectedContrie,setSelectedContrie] = useState("Belgium")//null
+  const prefersDarkMode = () => {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  };
+
+  const [darkMode,setDarkMode]=useState(prefersDarkMode)
+  const [selectedContrie,setSelectedContrie] = useState(null)
   const usedData = data.map(contry=>({
     name: contry.name,
     population: contry.population,
