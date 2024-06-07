@@ -27,7 +27,7 @@ function OneContrie({ contry,darkMode,setSelectedContrie,usedData}) {
   }
 
   function clickOnOtherContry(country){
-    //TODO: scrole to the top of the web page
+    // scrole to the top of the web page
     window.scrollTo({ top: 0});
     setSelectedContrie(country)
   }
@@ -40,28 +40,29 @@ function OneContrie({ contry,darkMode,setSelectedContrie,usedData}) {
       </div>
       <div className="info-contry">
           <img src={flag} alt="flag" />
-          <div className="info-wraper">
-            <div className="info1">
-              <h1>{name}</h1>
-              <p><span>Native Name: </span>{nativeName}</p>
-              <p><span>Population: </span>{formatNumber(population)}</p>
-              <p><span>Region: </span>{region}</p>
-              <p><span>Sub Region: </span>{subRegion}</p>
-              <p><span>Capital: </span>{capital}</p>
+          <div className='info-plus'>
+            <div className="info-wraper">
+              <div className="info1">
+                <h1>{name}</h1>
+                <p><span>Native Name: </span>{nativeName}</p>
+                <p><span>Population: </span>{formatNumber(population)}</p>
+                <p><span>Region: </span>{region}</p>
+                <p><span>Sub Region: </span>{subRegion}</p>
+                <p><span>Capital: </span>{capital}</p>
+              </div>
+              <div className="info2">
+                <p><span>Top Level Domain: </span>{topLevelDomain}</p>
+                <p><span>Currencies: </span>{getCurrency()}</p>
+                <p><span>Languages: </span>{getLanguages()}</p>
+              </div>
             </div>
-            <div className="info2">
-              <p><span>Top Level Domain: </span>{topLevelDomain}</p>
-              {/* to do:  */}
-              <p><span>Currencies: </span>{getCurrency()}</p>
-              <p><span>Languages: </span>{getLanguages()}</p>
-            </div>
-          </div>
-          <div className="border-div">
-            <h2>Border Countries: </h2>
-            <div className='border-contries-list'>
-              {getBorderContries().map(country => (
-                <div key={country} onClick={()=>{clickOnOtherContry(country)}}>{country}</div>
-              ))}
+            <div className="border-div">
+              <h2>Border Countries: </h2>
+              <div className='border-contries-list'>
+                {getBorderContries().map(country => (
+                  <div key={country} onClick={()=>{clickOnOtherContry(country)}}>{country}</div>
+                ))}
+              </div>
             </div>
           </div>
       </div>

@@ -55,6 +55,8 @@ font-size: .8rem;
 .info-contry > img{
     width: 100%;
     height: 220px;
+    object-fit: cover; /* Ensures the image covers the entire area */
+    object-position: center;
 }
 
 .info1{
@@ -93,4 +95,87 @@ font-size: .8rem;
 
 .one-Contry-div.dark .border-contries-list > div{
     background-color: var(--clr-dark-blue);
+}
+
+@media screen and (min-width:450px) {
+    .one-Contry-div{
+        padding-inline: 4rem;
+        padding-top: 3.75rem;
+    }
+    .info-contry {
+        width: 350px;
+        margin-inline: auto;
+    }
+}
+
+@media screen and (min-width:1100px) {
+    .btn-back{
+        width: 130px;
+        height: 2.4rem;
+    }
+
+    .btn-back p{
+        font-size: 1rem;
+    }
+
+    .info-contry {
+        margin-top: 4.75rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .info-contry > img{
+        width: 43.5%;
+        height: auto;
+        aspect-ratio: 1 / .72;
+    }
+
+    .info-plus{
+        width: 45.3%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .info1 , .info2 , .border-div, .border-contries-list{
+        margin: 0;
+    }
+
+    .info-wraper{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1rem;
+        padding-right: .6rem;
+    }
+
+    .one-Contry-div h1{
+        font-size: 1.9rem;
+        margin-bottom: 1.7rem;
+    }
+
+    .info-contry p{
+        font-size: .95rem;
+    }
+
+    .info2{
+        padding-top: 4.5rem;
+    }
+
+    .one-Contry-div h2{
+        font-size: .95rem;
+    }
+
+    .border-div{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .border-contries-list{
+        width: 70%;
+    }
+
+    .one-Contry-div{
+        margin-bottom: 5rem;
+    }
 }
