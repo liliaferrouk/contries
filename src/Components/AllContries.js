@@ -12,7 +12,7 @@ function AllContries({darkMode,usedData,setSelectedContrie}) {
     const [currentPage, setCurrentPage] = useState(1);
     const [loading, setLoading] = useState(false);
     const [hasMore,setHasMore] = useState(true)
-    const countriesPerPage = 5;
+    const countriesPerPage = 8;
 
     const fetchCountries = async (page, reset = false) => {
         setLoading(true);
@@ -50,7 +50,7 @@ function AllContries({darkMode,usedData,setSelectedContrie}) {
     const handleScroll = () => {
         const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
         // console.log("Scroll detected. ScrollTop:", scrollTop, "ClientHeight:", clientHeight, "ScrollHeight:", scrollHeight);
-        if (scrollTop + clientHeight > scrollHeight -50 && !loading && hasMore) {
+        if (scrollTop + clientHeight > scrollHeight -200 && !loading && hasMore) {
             setCurrentPage(prevPage => prevPage + 1);
         }
     };

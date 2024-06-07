@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useEffect, useState } from 'react';
 import './App.css';
 import Header from './Components/Header';
 import AllContries from './Components/AllContries';
@@ -7,6 +7,16 @@ import data from './data.json'
 
 
 function App() {
+  useEffect(() => {
+    if (navigator.userAgent.match(/samsung/i)) {
+      alert("Your browser (Samsung Internet) may not show this website" +
+            " correctly. Please consider using a standards-compliant" +
+            " browser instead. \n\n" +
+            "We recommend Firefox, Microsoft Edge, or Google Chrome.");
+    }
+  }, []);
+
+
   const prefersDarkMode = () => {
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   };

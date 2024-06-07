@@ -60,3 +60,68 @@
     font-size: .9rem;
     text-align: center;
 }
+
+@media screen and (min-width:500px) {
+    .search-input-wrapper{
+        width: 250px;
+    }
+
+    .search-filter {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (min-width:600px) {
+    .countries-list{
+        width: 532px;
+        display: grid;
+        grid-template-columns: 250px 250px;
+        gap: 2rem 2rem;
+        margin-inline: auto;
+    }
+
+    .search-input-wrapper{
+        width: 300px;
+    }
+}
+
+@media screen and (min-width:930px) {
+    .countries-list{
+        width: 890px;
+        grid-template-columns: 250px 250px 250px;
+        margin-inline: auto;
+    }
+}
+
+@media screen and (min-width:1100px) {
+    .countries-list{
+        width: 1096px;
+        grid-template-columns: 250px 250px 250px 250px;
+        margin-inline: auto;
+    }
+
+    .search-filter {
+        margin-top: 1.75rem;
+        padding-inline: 4rem;
+    }
+
+    .search-input-wrapper{
+        height: 3.5rem;
+        width: 460px;
+        padding-inline: 1.75rem;
+    }
+
+    .search-input-wrapper img{
+        margin-right: 1.2rem;
+    }
+    
+    .search-filter input{
+        font-size: .85rem;
+    }
+
+    .countries-list{
+        margin-top: 2.75rem;
+    }
+}

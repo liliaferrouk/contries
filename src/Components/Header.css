@@ -36,3 +36,21 @@ header > p{
     font-weight: 650;
     margin-left: 8px;
 }
+
+@media screen and (min-width:1100px){
+    header{
+        padding-inline: 5rem;
+    }
+
+    header > p{
+        font-size: 1.43rem;
+    }
+
+    .switch-mode > img{
+        width: 17px;
+    }
+
+    .switch-mode > span{
+        font-size: 1rem;
+    }
+}

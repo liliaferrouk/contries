@@ -49,3 +49,27 @@
 .filter-region.dark .list p:hover{
     background-color: var(--clr-vary-dark-blue);
 }
+
+@media screen and (min-width:500px) {
+    .filter-region .selectionne{
+        width: 140px;
+    }
+
+    .filter-region .list{
+        width: 140px;
+    }
+}
+
+@media screen and (min-width:1100px) {
+    .filter-region .selectionne{
+        height: 3.5rem;
+        width: 200px;
+        font-size: .8rem;
+    }
+
+    .filter-region .list{
+        width: 200px;
+        top: 3.75rem;
+        font-size: .8rem;
+    }
+}
