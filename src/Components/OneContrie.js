@@ -12,30 +12,24 @@ function OneContrie({ contry,darkMode,setSelectedContrie,usedData}) {
   const { name, population, region, capital, nativeName, subRegion, topLevelDomain, currencies, languages, borders,flag } = contry;
 
   function getCurrency(){
-    let str = ""
-    for (let i = 0; i < currencies.length; i++) {
-      if(i>0) str += ", "
-      str += currencies[i].name;
-    }
-    return str;
+    return currencies.map(currency => currency.name).join(", ");
   }
 
   function getLanguages(){
-    let str = ""
-    for (let i = 0; i < languages.length; i++) {
-      if(i>0) str += ", "
-      str += languages[i].name;
-    }
-    return str;
+    return languages.map(language => language.name).join(", ");
   }
 
   function getBorderContries() {
-    let result = []
-    for (let i = 0; i < borders.length; i++) {
-      let ContryBorder = usedData.find(d => d.alphaCode === borders[i])
-      result.push(ContryBorder.name);
-    }
-    return result
+    return borders.map(border => {
+      let countryBorder = usedData.find(d => d.alphaCode === border);
+      return countryBorder ? countryBorder.name : 'Unknown';
+    });
+  }
+
+  function clickOnOtherContry(country){
+    //TODO: scrole to the top of the web page
+    window.scrollTo({ top: 0});
+    setSelectedContrie(country)
   }
 
   return (
@@ -66,7 +60,7 @@ function OneContrie({ contry,darkMode,setSelectedContrie,usedData}) {
             <h2>Border Countries: </h2>
             <div className='border-contries-list'>
               {getBorderContries().map(country => (
-                <div key={country} onClick={()=>{setSelectedContrie(country)}}>{country}</div>
+                <div key={country} onClick={()=>{clickOnOtherContry(country)}}>{country}</div>
               ))}
             </div>
           </div>
