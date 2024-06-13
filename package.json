@@ -1,6 +1,6 @@
 {
-  "homepage": "https://liliaferrouk.github.io/contries",
-  "name": "contries",
+  "homepage": "https://liliaferrouk.github.io/countries",
+  "name": "countries",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
