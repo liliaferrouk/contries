@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/contries/static/css/main.66df8976.css",
-    "main.js": "/contries/static/js/main.f81003dd.js",
-    "index.html": "/contries/index.html",
-    "static/media/search.svg": "/contries/static/media/search.21360e1bcf8a63aa7a3df40b28fb87ff.svg",
-    "static/media/moon-v.svg": "/contries/static/media/moon-v.2129577db9c00aaa71d763c759f31a5e.svg",
-    "static/media/moon-r.svg": "/contries/static/media/moon-r.541f80383b056c5a524bfcc517a5cd90.svg",
-    "static/media/arrow-back-white.svg": "/contries/static/media/arrow-back-white.8ad9d5d207ebe842bfe68fec66075a80.svg",
-    "static/media/arrow-back-black.svg": "/contries/static/media/arrow-back-black.eb9c223cb3f460bbe35bb0eb4aed1ae0.svg",
-    "static/media/arrow-down-blanc.svg": "/contries/static/media/arrow-down-blanc.ee625e29e4665ddde8b5f27a9ce314b4.svg",
-    "static/media/arrow-down.svg": "/contries/static/media/arrow-down.5dc527e0a3089d38fc4ab8fd69e2fcbd.svg",
-    "main.66df8976.css.map": "/contries/static/css/main.66df8976.css.map",
-    "main.f81003dd.js.map": "/contries/static/js/main.f81003dd.js.map"
+    "main.css": "/countries/static/css/main.66df8976.css",
+    "main.js": "/countries/static/js/main.786b3f17.js",
+    "index.html": "/countries/index.html",
+    "static/media/search.svg": "/countries/static/media/search.21360e1bcf8a63aa7a3df40b28fb87ff.svg",
+    "static/media/moon-v.svg": "/countries/static/media/moon-v.2129577db9c00aaa71d763c759f31a5e.svg",
+    "static/media/moon-r.svg": "/countries/static/media/moon-r.541f80383b056c5a524bfcc517a5cd90.svg",
+    "static/media/arrow-back-white.svg": "/countries/static/media/arrow-back-white.8ad9d5d207ebe842bfe68fec66075a80.svg",
+    "static/media/arrow-back-black.svg": "/countries/static/media/arrow-back-black.eb9c223cb3f460bbe35bb0eb4aed1ae0.svg",
+    "static/media/arrow-down-blanc.svg": "/countries/static/media/arrow-down-blanc.ee625e29e4665ddde8b5f27a9ce314b4.svg",
+    "static/media/arrow-down.svg": "/countries/static/media/arrow-down.5dc527e0a3089d38fc4ab8fd69e2fcbd.svg",
+    "main.66df8976.css.map": "/countries/static/css/main.66df8976.css.map",
+    "main.786b3f17.js.map": "/countries/static/js/main.786b3f17.js.map"
   },
   "entrypoints": [
     "static/css/main.66df8976.css",
-    "static/js/main.f81003dd.js"
+    "static/js/main.786b3f17.js"
   ]
 }
